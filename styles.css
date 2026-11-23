@@ -831,3 +831,120 @@ body.locked { overflow: hidden; height: 100svh; }
   0% { transform: scale(1); }
   100% { transform: scale(1.07); }
 }
+
+
+/* =========================================================
+   FRAME 9 — POETIC RENEWAL, YES/NO & INVITATION CARD
+   ========================================================= */
+.f9-low-opacity { opacity: 0.22; }
+.f9-low-opacity .media-placeholder { opacity: 0.35; }
+
+.renewal-poem {
+  max-width: 340px;
+  display: flex; flex-direction: column; gap: 12px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16.5px; line-height: 1.58;
+  color: rgba(251,244,233,0.95);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+  margin: 6px 0 4px;
+}
+
+.rsvp-box {
+  width: 100%; max-width: 330px;
+  margin-top: 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.rsvp-prompt {
+  font-family: var(--font-serif);
+  font-size: 15px; color: var(--gold-light);
+  letter-spacing: 0.03em; line-height: 1.4;
+}
+.rsvp-btn-row { display: flex; gap: 12px; justify-content: center; width: 100%; }
+.rsvp-btn {
+  padding: 12px 22px; border-radius: 999px;
+  font-family: var(--font-sans); font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;
+  border: none;
+}
+.rsvp-btn:active { transform: scale(0.95); }
+.rsvp-yes {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+  color: var(--burgundy-deep);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.42);
+}
+.rsvp-no {
+  background: rgba(251,244,233,0.1);
+  color: var(--cream);
+  border: 1px solid rgba(243,220,153,0.4);
+}
+.rsvp-btn.full-w { width: 100%; }
+.no-nudge {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 14px; color: var(--gold-light); min-height: 20px;
+}
+
+.invite-reveal {
+  width: 100%; max-width: 340px;
+  margin-top: 12px;
+  display: flex; flex-direction: column; gap: 16px;
+  animation: fadeUpInvite 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.invite-reveal[hidden] { display: none; }
+@keyframes fadeUpInvite {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.invite-card-preview {
+  background: linear-gradient(160deg, #640D19 0%, #3F060F 100%);
+  padding: 10px; border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+  border: 1.5px solid var(--gold);
+}
+.invite-card-border {
+  border: 1px solid rgba(243,220,153,0.48);
+  border-radius: 8px;
+  padding: 22px 18px;
+  text-align: center;
+}
+.invite-kicker {
+  font-size: 10px; letter-spacing: 0.24em; color: var(--gold-light);
+  margin-bottom: 6px;
+}
+.invite-script {
+  font-family: var(--font-script); font-size: 38px; font-weight: 400;
+  color: var(--cream); line-height: 1.1;
+}
+.invite-to {
+  font-family: var(--font-serif); font-style: italic; font-size: 15px;
+  color: var(--gold-light); margin-top: 4px;
+}
+.invite-divider { color: rgba(243,220,153,0.55); font-size: 12px; margin: 12px 0; }
+.invite-detail {
+  font-family: var(--font-serif); font-size: 15px; line-height: 1.55;
+  color: rgba(251,244,233,0.92);
+}
+.invite-footer-note {
+  margin-top: 14px; font-family: var(--font-serif); font-style: italic;
+  font-size: 13px; color: var(--gold-light); opacity: 0.9;
+}
+
+.invite-form {
+  display: flex; flex-direction: column; gap: 10px;
+  background: rgba(58,6,14,0.72);
+  border: 1px solid rgba(243,220,153,0.32);
+  border-radius: 12px; padding: 16px;
+}
+.invite-label {
+  font-family: var(--font-serif); font-size: 14.5px; color: var(--cream);
+}
+.invite-input {
+  width: 100%; padding: 12px 14px; border-radius: 8px;
+  border: 1px solid rgba(243,220,153,0.45);
+  background: rgba(251,244,233,0.96); color: var(--ink);
+  font-family: var(--font-sans); font-size: 14px;
+}
+.invite-status {
+  font-size: 13px; color: var(--gold-light); min-height: 18px;
+}
