@@ -163,7 +163,6 @@
   renderMedia($('f9-bg'), D.frame9.closingMedia);
   $('f9-t1').textContent = D.frame9.titleLine1;
   $('f9-t2').textContent = D.frame9.titleLine2;
-  $('f9-subtitle').textContent = D.frame9.subtitle;
   $('f9-date').textContent = D.meta.dateShort;
 
   const heartsWrap = $('floating-hearts');
@@ -177,6 +176,65 @@
     h.style.animationDelay = `${(i % 6) * 0.9}s`;
     heartsWrap.appendChild(h);
   }
+
+
+  // Frame 9 — Yes/No & Email Invitation Card
+  const btnYes = $('btn-yes');
+  const btnNo = $('btn-no');
+  const noNudge = $('no-nudge');
+  const inviteReveal = $('invite-reveal');
+  const rsvpBox = $('rsvp-box');
+  const inviteForm = $('invite-form');
+  const inviteStatus = $('invite-status');
+
+  const nudges = [
+    'Nice try, my queen 😉 the sea & the moon already know it’s Yes!',
+    'That button is just for decoration ❤️ tap Yes!',
+    'You really thought No was an option? 😘'
+  ];
+  let noCount = 0;
+
+  btnNo?.addEventListener('click', () => {
+    noNudge.textContent = nudges[noCount % nudges.length];
+    noCount++;
+    btnNo.style.transform = `translateX(${noCount % 2 === 0 ? -12 : 12}px)`;
+  });
+
+  btnYes?.addEventListener('click', () => {
+    rsvpBox.hidden = true;
+    inviteReveal.hidden = false;
+    inviteReveal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  inviteForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = $('queen-email').value.trim();
+    if (!email) return;
+    const btn = $('send-invite-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending your invitation... 💌';
+    inviteStatus.textContent = '';
+    try {
+      const resp = await fetch('/api/send-invite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await resp.json();
+      if (resp.ok && data.ok) {
+        btn.textContent = 'Invitation Sent! ❤️';
+        inviteStatus.textContent = `Check your inbox (${email}) — your anniversary date invitation is waiting! ✨`;
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send My Invitation Card ✨';
+        inviteStatus.textContent = data.message || 'Your invitation card is ready above ❤️ (Email delivery activates once Resend API key is added in Vercel).';
+      }
+    } catch (_) {
+      btn.disabled = false;
+      btn.textContent = 'Send My Invitation Card ✨';
+      inviteStatus.textContent = 'Your invitation card is ready above ❤️';
+    }
+  });
 
   // Envelope Open & Replay
   const envBtn = $('envelope-btn');
