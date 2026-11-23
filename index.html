@@ -274,9 +274,9 @@
       </div>
     </section>
 
-    <!-- FRAME 9 — CLOSING BANNER -->
+    <!-- FRAME 9 — CLOSING RENEWAL & DATE INVITATION -->
     <section id="frame-9" class="frame-section closing-section">
-      <div id="f9-bg" class="bg-media-layer"></div>
+      <div id="f9-bg" class="bg-media-layer f9-low-opacity"></div>
       <div class="closing-vignette"></div>
       <div id="floating-hearts" class="floating-hearts" aria-hidden="true"></div>
 
@@ -285,8 +285,47 @@
           <span id="f9-t1">Happy Anniversary,</span>
           <span id="f9-t2" class="hero-script-sub">My Love!</span>
         </h2>
-        <p id="f9-subtitle" class="closing-sub">Forever with you ❤️</p>
+
+        <div class="renewal-poem">
+          <p id="f9-poem-1">One year ago, I asked you to be mine on the beach — and the gods of the sea, love, and the moon witnessed that.</p>
+          <p id="f9-poem-2">Today, I am asking again as a renewal: will you be my girlfriend again, and my best friend?</p>
+          <p id="f9-poem-3">And will you go on an anniversary date with me to celebrate us when you are back from your journey?</p>
+        </div>
+
         <p id="f9-date" class="closing-date">11 · 28 · 2026</p>
+
+        <div id="rsvp-box" class="rsvp-box">
+          <p id="f9-rsvp-prompt" class="rsvp-prompt">Press Yes if you would like to go on a date with me, my queen</p>
+          <div class="rsvp-btn-row">
+            <button id="btn-yes" class="rsvp-btn rsvp-yes" type="button">Yes, my love ❤️</button>
+            <button id="btn-no" class="rsvp-btn rsvp-no" type="button">No</button>
+          </div>
+          <p id="no-nudge" class="no-nudge" aria-live="polite"></p>
+        </div>
+
+        <!-- Email & Designed Invitation Card (revealed on YES) -->
+        <div id="invite-reveal" class="invite-reveal" hidden>
+          <div class="invite-card-preview">
+            <div class="invite-card-border">
+              <p class="invite-kicker">✦ OFFICIAL INVITATION ✦</p>
+              <h3 class="invite-script">Our Anniversary Date</h3>
+              <p class="invite-to">For My Queen &amp; Best Friend</p>
+              <div class="invite-divider">─── ♥ ───</div>
+              <p class="invite-detail"><strong>Occasion:</strong> Celebrating One Year of Us</p>
+              <p class="invite-detail"><strong>When:</strong> As soon as you’re back from your journey</p>
+              <p class="invite-detail"><strong>Dress Code:</strong> Whatever makes you feel radiant</p>
+              <p class="invite-footer-note">Witnessed by the sea, love &amp; the moon 🌙</p>
+            </div>
+          </div>
+
+          <form id="invite-form" class="invite-form">
+            <label for="queen-email" class="invite-label">Enter your email to receive your invitation card 💌</label>
+            <input id="queen-email" type="email" required placeholder="your.email@example.com" class="invite-input" />
+            <button id="send-invite-btn" type="submit" class="rsvp-btn rsvp-yes full-w">Send My Invitation Card ✨</button>
+            <p id="invite-status" class="invite-status" aria-live="polite"></p>
+          </form>
+        </div>
+
         <button id="replay-btn" class="replay-btn" type="button">💌 Replay from envelope</button>
       </div>
     </section>
