@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+  <title>One Year of Us</title>
+  <meta name="description" content="A little anniversary surprise made just for you — November 28, 2026." />
+  <meta property="og:title" content="One Year of Us" />
+  <meta property="og:description" content="Happy Anniversary, My Love — November 28, 2026" />
+  <meta name="theme-color" content="#5A0B15" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="locked">
+  <!-- =========================================================
+       FRAME 1 — OPENING ENVELOPE ("You got a mail!")
+       ========================================================= -->
+  <section id="frame-1" class="envelope-screen" aria-label="Opening Envelope">
+    <div id="f1-bg" class="bg-media-layer"></div>
+    <div class="envelope-scrim"></div>
+
+    <div class="envelope-stage">
+      <p id="f1-heading" class="script-title envelope-heading">You got a mail!</p>
+
+      <button id="envelope-btn" class="envelope-wrapper" type="button" aria-label="Tap to open your anniversary letter">
+        <div class="envelope-shadow"></div>
+        <div class="envelope-body">
+          <!-- Inner letter peeking out when opened -->
+          <div class="envelope-letter-peek">
+            <span class="peek-heart">❤️</span>
+            <span class="peek-text">For My Love</span>
+          </div>
+          <!-- Envelope side & bottom folds -->
+          <div class="envelope-fold-left"></div>
+          <div class="envelope-fold-right"></div>
+          <div class="envelope-fold-bottom"></div>
+          <!-- Top flap -->
+          <div class="envelope-flap"></div>
+          <!-- Gold Wax Seal -->
+          <div class="wax-seal" aria-hidden="true">
+            <div class="wax-seal-inner">
+              <span class="wax-heart">♥</span>
+            </div>
+          </div>
+        </div>
+      </button>
+
+      <p id="f1-hint" class="tap-hint">Tap the seal to open</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MAIN VERTICAL MOBILE EXPERIENCE (FRAMES 2 – 9)
+       ========================================================= -->
+  <main id="story-main" class="story-main" aria-hidden="true">
+
+    <!-- FRAME 2 — HERO REVEAL -->
+    <section id="frame-2" class="frame-section hero-section">
+      <div id="f2-bg" class="bg-media-layer"></div>
+      <div class="hero-vignette"></div>
+
+      <div class="hero-content reveal">
+        <div id="f2-date" class="date-pill">November 28, 2026</div>
+        <h1 class="hero-script">
+          <span id="f2-t1">Happy Anniversary,</span>
+          <span id="f2-t2" class="hero-script-sub">My Love!</span>
+        </h1>
+        <div class="ornament-divider" aria-hidden="true">
+          <span></span><i>❦</i><span></span>
+        </div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span id="f2-scroll-hint">Scroll down for your surprise</span>
+        <div class="scroll-chevron">⌄</div>
+      </div>
+    </section>
+
+    <!-- FRAME 3 — SHORT OPENING NOTE + 2 PHOTOS -->
+    <section id="frame-3" class="frame-section velvet-section note-section">
+      <div class="velvet-texture"></div>
+      <div class="section-inner">
+        <div class="doodle-row top-doodles reveal" aria-hidden="true">
+          <span class="sticker-bow">🎀</span>
+          <span class="ornament-mini">✦ ♡ ✦</span>
+          <span class="sticker-heart">💌</span>
+        </div>
+
+        <div class="note-card reveal">
+          <div class="note-card-flourish" aria-hidden="true">❧</div>
+          <h2 id="f3-heading" class="serif-caps-title">HAPPY ANNIVERSARY, MY LOVE</h2>
+          <p id="f3-text" class="note-body"></p>
+          <div class="note-card-bottom-heart" aria-hidden="true">♡</div>
+        </div>
+
+        <div class="dual-photos reveal">
+          <div id="f3-photo-a" class="framed-photo tilt-left"></div>
+          <div id="f3-photo-b" class="framed-photo tilt-right"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAME 4 — POLAROID MEMORIES WALL -->
+    <section id="frame-4" class="frame-section velvet-section polaroid-section">
+      <div class="velvet-texture"></div>
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="header-sparkle" aria-hidden="true">✨</span>
+          <h2 id="f4-heading" class="script-heading">Our Time Together</h2>
+          <p class="micro-hint">Tap any photo to zoom in</p>
+        </div>
+
+        <div id="polaroid-grid" class="polaroid-grid"></div>
+      </div>
+    </section>
+
+    <!-- FRAME 5 — "MY FAVORITE PERSON" FILMSTRIP -->
+    <section id="frame-5" class="frame-section velvet-section filmstrip-section">
+      <div class="velvet-texture"></div>
+      <div class="section-inner">
+        <div class="film-header reveal">
+          <span class="film-doodle" aria-hidden="true">🎀</span>
+          <h2 id="f5-header" class="serif-caps-title light-title">MY FAVORITE PERSON</h2>
+          <span class="film-doodle" aria-hidden="true">🤍</span>
+        </div>
+
+        <div class="filmstrip-reel reveal">
+          <div class="sprocket-row" aria-hidden="true"></div>
+          <div class="filmstrip-frames">
+            <div id="f5-media-a" class="film-frame"></div>
+            <div id="f5-media-b" class="film-frame"></div>
+          </div>
+          <div class="sprocket-row" aria-hidden="true"></div>
+        </div>
+
+        <div class="film-footer reveal">
+          <p id="f5-footer" class="serif-caps-sub">I LOVE YOU SO MUCH</p>
+          <div class="flourish-svg" aria-hidden="true">─── ♡ ───</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAME 6 — THE LOVE LETTER -->
+    <section id="frame-6" class="frame-section velvet-section letter-section">
+      <div class="velvet-texture"></div>
+      <div class="section-inner">
+        <article class="stationery-sheet reveal">
+          <div class="stationery-top">
+            <div class="letter-polaroid-wrap">
+              <div class="washi-tape"></div>
+              <div id="f6-photo" class="letter-polaroid-photo"></div>
+            </div>
+            <div class="letter-stamp-doodle" aria-hidden="true">
+              <div class="postage-stamp">
+                <span>NOV</span>
+                <strong>28</strong>
+                <span>♥</span>
+              </div>
+              <div class="couple-doodle">♡ ₊˚⊹</div>
+            </div>
+          </div>
+
+          <h2 id="f6-salutation" class="letter-salutation">My Dearest,</h2>
+          <div id="f6-body" class="letter-paragraphs"></div>
+
+          <div class="letter-signoff">
+            <p id="f6-signoff-label" class="signoff-label">Forever yours,</p>
+            <p id="f6-signature" class="signoff-script">Your Love ❤️</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FRAME 7 — VINTAGE DIGICAM STACK -->
+    <section id="frame-7" class="frame-section velvet-section digicam-section">
+      <div class="velvet-texture"></div>
+      <div class="section-inner">
+        <p id="f7-hint" class="micro-hint light-hint reveal">Tap a camera shutter to cycle candids 📸</p>
+
+        <div class="gingham-mat reveal">
+          <div class="digicam-stack">
+            <!-- Camera A -->
+            <div class="digicam-card cam-tilt-a" data-cam="cameraA">
+              <div class="cam-top-bar">
+                <span class="cam-brand" id="camA-model">CYBER-SHOT · 01</span>
+                <div class="cam-controls-top">
+                  <span class="cam-rec-dot"></span>
+                  <button class="cam-shutter-btn" type="button" data-shutter="cameraA" aria-label="Next candid photo on camera 1">
+                    <span>SNAP</span>
+                  </button>
+                </div>
+              </div>
+              <div class="cam-body-main">
+                <div class="cam-lcd-bezel">
+                  <div id="camA-lcd" class="cam-lcd-screen"></div>
+                  <div class="cam-flash-overlay" id="camA-flash"></div>
+                  <div class="cam-lcd-hud">
+                    <span id="camA-counter">1/3</span>
+                    <span id="camA-caption">Unfiltered & happy</span>
+                  </div>
+                </div>
+                <div class="cam-side-buttons" aria-hidden="true">
+                  <span class="cam-btn-dot"></span>
+                  <span class="cam-dpad">⊕</span>
+                  <span class="cam-btn-dot"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Camera B -->
+            <div class="digicam-card cam-tilt-b" data-cam="cameraB">
+              <div class="cam-top-bar">
+                <span class="cam-brand" id="camB-model">DIGITAL IXUS · 02</span>
+                <div class="cam-controls-top">
+                  <span class="cam-rec-dot"></span>
+                  <button class="cam-shutter-btn" type="button" data-shutter="cameraB" aria-label="Next candid photo on camera 2">
+                    <span>SNAP</span>
+                  </button>
+                </div>
+              </div>
+              <div class="cam-body-main">
+                <div class="cam-lcd-bezel">
+                  <div id="camB-lcd" class="cam-lcd-screen"></div>
+                  <div class="cam-flash-overlay" id="camB-flash"></div>
+                  <div class="cam-lcd-hud">
+                    <span id="camB-counter">1/3</span>
+                    <span id="camB-caption">My favorite view</span>
+                  </div>
+                </div>
+                <div class="cam-side-buttons" aria-hidden="true">
+                  <span class="cam-btn-dot"></span>
+                  <span class="cam-dpad">⊕</span>
+                  <span class="cam-btn-dot"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAME 8 — "THIS SONG REMINDS ME OF YOU" VINYL PLAYER -->
+    <section id="frame-8" class="frame-section velvet-section vinyl-section">
+      <div class="velvet-texture"></div>
+      <div class="section-inner">
+        <div class="vinyl-header reveal">
+          <h2 id="f8-heading" class="script-heading">This song reminds me of you</h2>
+          <span class="music-note-float" aria-hidden="true">🎵</span>
+        </div>
+
+        <div id="vinyl-stage" class="vinyl-stage reveal">
+          <div class="vinyl-disc" aria-hidden="true">
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-label">
+              <span class="vinyl-label-heart">♥</span>
+              <span class="vinyl-label-text">NOV 28</span>
+            </div>
+          </div>
+          <div id="f8-cover" class="album-sleeve"></div>
+        </div>
+
+        <div class="vinyl-controls reveal">
+          <p id="f8-song-title" class="song-title">Your Special Song Title</p>
+          <p id="f8-artist" class="song-artist">Artist Name</p>
+          <button id="vinyl-play-btn" class="play-pill-btn" type="button">
+            <span id="play-icon">▶</span>
+            <span id="play-label">Play Song</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAME 9 — CLOSING BANNER -->
+    <section id="frame-9" class="frame-section closing-section">
+      <div id="f9-bg" class="bg-media-layer"></div>
+      <div class="closing-vignette"></div>
+      <div id="floating-hearts" class="floating-hearts" aria-hidden="true"></div>
+
+      <div class="closing-content reveal">
+        <h2 class="hero-script closing-script">
+          <span id="f9-t1">Happy Anniversary,</span>
+          <span id="f9-t2" class="hero-script-sub">My Love!</span>
+        </h2>
+        <p id="f9-subtitle" class="closing-sub">Forever with you ❤️</p>
+        <p id="f9-date" class="closing-date">11 · 28 · 2026</p>
+        <button id="replay-btn" class="replay-btn" type="button">💌 Replay from envelope</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Polaroid Lightbox Modal -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Close photo">✕</button>
+    <div class="lightbox-polaroid">
+      <div id="lightbox-media" class="lightbox-media"></div>
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+      <p id="lightbox-date" class="lightbox-date"></p>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
