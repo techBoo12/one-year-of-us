@@ -46,9 +46,10 @@
   $('f4-heading').textContent = D.frame4.heading;
   const grid = $('polaroid-grid');
   grid.innerHTML = '';
-  D.frame4.polaroids.forEach((p) => {
+  D.frame4.polaroids.forEach((p, idx) => {
     const card = document.createElement('div');
     card.className = 'polaroid-card reveal';
+    card.style.transitionDelay = `${(idx % 2) * 140}ms`;
     card.innerHTML = `
       <div class="polaroid-tape"></div>
       <div class="polaroid-photo-box"></div>
