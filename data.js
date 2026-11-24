@@ -17,8 +17,8 @@ window.ANNIVERSARY_DATA = {
     heading: "You got a mail!",
     tapHint: "Tap the seal to open",
     bgMedia: {
-      type: "image", // "image" | "video"
-      src: "",
+      type: "video", // "image" | "video"
+      src: "media/frame1.mp4",
       placeholderLabel: "FRAME 1 · BG PHOTO / CLIP #1",
       placeholderSub: "Atmospheric vertical photo or clip",
     },
