@@ -1021,3 +1021,52 @@ body.locked { overflow: hidden; height: 100svh; }
   min-height: auto !important;
   padding-top: 24px !important;
 }
+
+
+/* Global media containment so NO photo/video ever overflows its frame */
+.dual-photos {
+  width: 100%;
+  max-width: 358px;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  overflow: visible;
+}
+.dual-photo-card {
+  width: 100% !important;
+  aspect-ratio: 4 / 5;
+  overflow: hidden !important;
+  background: var(--cream);
+  padding: 6px;
+  border-radius: 6px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
+}
+.dual-photo-card img,
+.dual-photo-card video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  display: block !important;
+  border-radius: 3px;
+}
+.polaroid-media,
+.film-frame,
+.letter-photo-wrap,
+.digicam-screen {
+  overflow: hidden !important;
+}
+.polaroid-media img,
+.polaroid-media video,
+.film-frame img,
+.film-frame video,
+.letter-photo-wrap img,
+.letter-photo-wrap video,
+.digicam-screen img,
+.digicam-screen video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  display: block !important;
+}
