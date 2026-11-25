@@ -40,9 +40,9 @@ window.ANNIVERSARY_DATA = {
 
   // FRAME 3 — Short Opening Note + 2 Photos
   frame3: {
-    cardHeading: "HAPPY ANNIVERSARY, MY LOVE",
+    cardHeading: "HAPPY ANNIVERSARY, MY QUEEN",
     noteText:
-      "It’s kind of amazing how much love and laughter we’ve packed into our time together. Every day with you feels like my favorite chapter, and I wouldn’t trade a single second of it for the world. Thank you for being my peace, my best friend, and my favorite place to be.",
+      "A year ago, you came into my life — and it’s wild how clear it’s become that you are the best thing to ever happen to me. You’ve shown me what it truly means to love and be loved. You’ve held me down, helped me grow, and shown up for me in ways I’ll never take for granted, and I wouldn’t trade a single second of our journey for anything. Thank you for being my peace, my real best friend, and my favorite place to be.",
     photoA: {
       type: "image",
       src: "",
