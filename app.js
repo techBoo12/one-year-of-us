@@ -416,3 +416,40 @@
   f1.style.position = f1.style.position || 'relative';
   f1.appendChild(pill);
 })();
+
+
+/* Lazy-load & viewport-only play for all videos (zero LTE lag) */
+(function initLazyVideos() {
+  const vids = Array.from(document.querySelectorAll('video'));
+  if (!vids.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const v = entry.target;
+      if (entry.isIntersecting) {
+        if (v.dataset.src && !v.getAttribute('src')) {
+          v.src = v.dataset.src;
+          v.load();
+        }
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { rootMargin: '250px 0px' });
+
+  vids.forEach((v) => {
+    // Keep Frame 1 beach video immediate; lazy-load all below-the-fold videos
+    const inFrame1 = v.closest('#frame-1, .frame-1, .envelope-section');
+    if (!inFrame1) {
+      const src = v.getAttribute('src');
+      if (src) {
+        v.dataset.src = src;
+        v.removeAttribute('src');
+        v.preload = 'none';
+      }
+    } else {
+      v.preload = 'metadata';
+    }
+    io.observe(v);
+  });
+})();
