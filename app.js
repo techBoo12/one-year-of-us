@@ -117,7 +117,9 @@
     });
   });
 
-  // Frame 8 — Spinning Vinyl Player
+  // Frame 8 — replaced by iMessage chat deck below
+  if ($('f8-heading')) {
+// Frame 8 — Spinning Vinyl Player
   $('f8-heading').textContent = D.frame8.heading;
   $('f8-song-title').textContent = D.frame8.songTitle;
   $('f8-artist').textContent = D.frame8.artist;
@@ -158,6 +160,8 @@
       clearInterval(chimeTimer);
     }
   });
+
+    }
 
   // Frame 9 — Closing Banner & Floating Hearts
   renderMedia($('f9-bg'), D.frame9.closingMedia);
