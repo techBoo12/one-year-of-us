@@ -67,7 +67,7 @@ window.ANNIVERSARY_DATA = {
       { id: 4, type: "video", src: "media/polaroid4.mp4", label: "POLAROID 4", caption: "Goofy buddy", date: "Memory 04" },
       { id: 5, type: "video", src: "media/polaroid5.mp4", label: "POLAROID 5", caption: "My style bender ❤️", date: "Memory 05" },
       { id: 6, type: "video", src: "media/polaroid6.mp4", label: "POLAROID 6", caption: "The price", date: "Memory 06" },
-      { id: 7, src: "", label: "POLAROID 7", caption: "Always my safe space", date: "Memory 07" },
+      { id: 7, type: "video", src: "media/polaroid7.mp4", label: "POLAROID 7", caption: "My safe space", date: "Memory 07" },
       { id: 8, src: "", label: "POLAROID 8", caption: "To forever & more ❤️", date: "Memory 08" },
     ],
   },
