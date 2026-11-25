@@ -1225,3 +1225,21 @@ body.locked { overflow: hidden; height: 100svh; }
   object-fit: cover !important;
   display: block !important;
 }
+
+
+/* Frame 6 pinned Polaroid photo */
+#f6-photo {
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+}
+#f6-photo img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 25% !important;
+  display: block !important;
+}
