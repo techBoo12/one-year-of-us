@@ -1097,3 +1097,18 @@ body.locked { overflow: hidden; height: 100svh; }
   object-position: center 20% !important;
   display: block !important;
 }
+
+
+/* Frame 3 — Single centered photo (3A only) */
+#frame-3 .dual-photos {
+  grid-template-columns: 1fr !important;
+  max-width: 300px !important;
+  margin: 0 auto !important;
+}
+#f3-photo-b {
+  display: none !important;
+}
+#f3-photo-a {
+  aspect-ratio: 5 / 4 !important;
+  transform: rotate(-1.5deg);
+}
