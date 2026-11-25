@@ -1160,3 +1160,24 @@ body.locked { overflow: hidden; height: 100svh; }
 .polaroid-photo-box video {
   object-position: center 62% !important;
 }
+
+
+/* Frame 5 single cinema frame */
+#frame-5 .filmstrip-slot:nth-child(2),
+#f5-slot-b, #f5-frame-b {
+  display: none !important;
+}
+#frame-5 .filmstrip-slot,
+#frame-5 .film-frame {
+  position: relative !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden !important;
+}
+#frame-5 .filmstrip-slot video,
+#frame-5 .film-frame video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
