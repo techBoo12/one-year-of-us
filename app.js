@@ -268,3 +268,71 @@
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   }
 })();
+
+
+/* === Ambient Sea Waves + Envelope Click SFX + Anniversary Song === */
+(function initAnniversaryAudio() {
+  const sea = new Audio('media/sea.mp3');
+  sea.loop = true;
+  sea.volume = 0.42;
+
+  const song = new Audio('media/song.mp3');
+  song.loop = true;
+  song.volume = 0.85;
+  window.__anniversarySong = song;
+
+  let envelopeOpened = false;
+  let seaStarted = false;
+
+  function startSea() {
+    if (envelopeOpened || seaStarted) return;
+    sea.play().then(() => { seaStarted = true; }).catch(() => {});
+  }
+
+  // Try immediate autoplay (works on desktop), and fallback to first touch/move on mobile
+  startSea();
+  ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => {
+    window.addEventListener(evt, startSea, { passive: true, once: true });
+  });
+
+  function playClickSfx() {
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      const ctx = new AC();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(620, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(140, ctx.currentTime + 0.06);
+      gain.gain.setValueAtTime(0.35, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.07);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.075);
+    } catch (_) {}
+  }
+
+  function onEnvelopeTap() {
+    if (envelopeOpened) return;
+    envelopeOpened = true;
+    playClickSfx();
+    // Fade out sea waves smoothly
+    const fade = setInterval(() => {
+      if (sea.volume > 0.05) {
+        sea.volume = Math.max(0, sea.volume - 0.06);
+      } else {
+        sea.pause();
+        clearInterval(fade);
+      }
+    }, 60);
+    // Start the anniversary song immediately on user click
+    song.currentTime = 0;
+    song.play().catch(() => {});
+  }
+
+  const envEl = document.getElementById('envelope') || document.querySelector('.envelope-wrap, .envelope');
+  if (envEl) {
+    envEl.addEventListener('click', onEnvelopeTap);
+  }
+})();
