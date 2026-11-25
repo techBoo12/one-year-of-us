@@ -1181,3 +1181,27 @@ body.locked { overflow: hidden; height: 100svh; }
   height: 100% !important;
   object-fit: cover !important;
 }
+
+
+/* Lightbox: show full uncropped photo/video cleanly without zooming in */
+#lightbox-media {
+  position: relative !important;
+  aspect-ratio: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 68vh !important;
+  background: #140508 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+#lightbox-media img,
+#lightbox-media video {
+  position: static !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 68vh !important;
+  object-fit: contain !important;
+  display: block !important;
+}
