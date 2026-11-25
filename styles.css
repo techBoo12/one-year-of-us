@@ -1153,3 +1153,10 @@ body.locked { overflow: hidden; height: 100svh; }
   object-position: center 20% !important;
   display: block !important;
 }
+
+
+/* Center faces in Polaroid square frames (no wasted sky/ceiling at top) */
+.polaroid-photo-box img,
+.polaroid-photo-box video {
+  object-position: center 62% !important;
+}
