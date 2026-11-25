@@ -88,11 +88,11 @@ window.ANNIVERSARY_DATA = {
       placeholderLabel: "FRAME 6 · LETTER PHOTO #6",
       placeholderSub: "Sweet Polaroid snapshot",
     },
-    salutation: "My Dearest,",
+    salutation: "My Queen,",
     paragraphs: [
       "Happy Anniversary, my love. Putting this little page together made me realize just how many moments we’ve shared that still make me smile out of nowhere.",
       "You have a way of making ordinary days feel like something worth remembering forever. Whether we’re dressed up going out or doing absolutely nothing together, you’re always my favorite part of the day.",
-      "Thank you for loving me so gently, for cheering me on, and for being the most wonderful partner I could ever ask for. Here’s to every memory behind us and every single one still waiting for us.",
+      "Thank you for choosing me every single day, for standing by me through every high and low, and for loving me in a way that feels like home. Here’s to every memory we’ve built and every chapter still waiting for us.",
     ],
     signOff: "Forever yours,",
     signature: "Your Love ❤️",
