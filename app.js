@@ -335,3 +335,51 @@
     }
   }, true);
 })();
+
+
+/* Frame 8: iMessage Stacked Photo Deck interaction */
+(function initChatDeck() {
+  const deck = document.getElementById('f8-chat-deck');
+  const counter = document.getElementById('f8-chat-counter');
+  if (!deck) return;
+  const cards = Array.from(deck.querySelectorAll('.imsg-card'));
+  const total = cards.length;
+  let order = cards.map((_, i) => i);
+  let busy = false;
+  let startX = null;
+
+  function applyPositions() {
+    order.forEach((cardIdx, pos) => {
+      const el = cards[cardIdx];
+      el.classList.remove('pos-0','pos-1','pos-2','pos-3','pos-4','fling-left','fling-right');
+      el.classList.add('pos-' + Math.min(pos, 4));
+    });
+    if (counter) counter.textContent = `${order[0] + 1} / ${total} · Tap or swipe`;
+  }
+
+  function flipNext(dir) {
+    if (busy) return;
+    busy = true;
+    const topEl = cards[order[0]];
+    topEl.classList.add(dir === 'right' ? 'fling-right' : 'fling-left');
+    setTimeout(() => {
+      order.push(order.shift());
+      applyPositions();
+      busy = false;
+    }, 240);
+  }
+
+  deck.addEventListener('pointerdown', (e) => { startX = e.clientX; });
+  deck.addEventListener('pointerup', (e) => {
+    if (startX === null) return;
+    const dx = e.clientX - startX;
+    startX = null;
+    if (Math.abs(dx) > 28) {
+      flipNext(dx > 0 ? 'right' : 'left');
+    } else {
+      flipNext('left');
+    }
+  });
+
+  applyPositions();
+})();
