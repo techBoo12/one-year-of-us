@@ -1134,3 +1134,22 @@ body.locked { overflow: hidden; height: 100svh; }
   object-position: center 20% !important;
   display: block !important;
 }
+
+
+/* Exact selector for Polaroid box (.polaroid-photo-box) so photos & videos fit cleanly */
+.polaroid-photo-box {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+}
+.polaroid-photo-box img,
+.polaroid-photo-box video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  display: block !important;
+}
