@@ -393,34 +393,6 @@
 })();
 
 
-/* Subtle iPhone Safari ocean-sound pill on Frame 1 */
-(function addOceanPill() {
-  const f1 = document.getElementById('frame-1') || document.querySelector('.frame-1, .envelope-section');
-  if (!f1 || document.getElementById('ocean-sound-pill')) return;
-  const pill = document.createElement('button');
-  pill.id = 'ocean-sound-pill';
-  pill.type = 'button';
-  pill.textContent = '🔊 Tap for ocean sound';
-  Object.assign(pill.style, {
-    position: 'fixed', top: '18px', left: '50%', transform: 'translateX(-50%)',
-    zIndex: '40', padding: '7px 14px', borderRadius: '999px',
-    background: 'rgba(20, 6, 10, 0.58)', color: '#f6e2b3',
-    border: '1px solid rgba(246, 226, 179, 0.35)', fontSize: '11px',
-    letterSpacing: '0.08em', backdropFilter: 'blur(8px)', cursor: 'pointer'
-  });
-  pill.addEventListener('click', (e) => {
-    e.stopPropagation();
-    pill.remove();
-  });
-  document.addEventListener('click', (e) => {
-    if (e.target && e.target.closest && e.target.closest('#envelope-btn, #envelope, .envelope-stage, .wax-seal')) {
-      pill.remove();
-    }
-  }, true);
-  f1.appendChild(pill);
-})();
-
-
 /* Lazy-load & viewport-only play for all videos (zero LTE lag) */
 (function initLazyVideos() {
   const vids = Array.from(document.querySelectorAll('video'));
