@@ -269,12 +269,11 @@
   }
 })();
 
-
-/* === Ambient Sea Waves + Envelope Click SFX + Anniversary Song === */
+/* === Ambient Sea Waves + Envelope Click SFX + Anniversary Song (v2) === */
 (function initAnniversaryAudio() {
   const sea = new Audio('media/sea.mp3');
   sea.loop = true;
-  sea.volume = 0.42;
+  sea.volume = 0.35;
 
   const song = new Audio('media/song.mp3');
   song.loop = true;
@@ -284,14 +283,17 @@
   let envelopeOpened = false;
   let seaStarted = false;
 
-  function startSea() {
+  function startSea(e) {
     if (envelopeOpened || seaStarted) return;
+    // If the very first tap IS on the envelope, don't start sea — go straight to click + song!
+    if (e && e.target && e.target.closest && e.target.closest('#envelope-btn, #envelope, .envelope-stage, .envelope-wrap, .envelope, [data-open-envelope]')) {
+      return;
+    }
     sea.play().then(() => { seaStarted = true; }).catch(() => {});
   }
 
-  // Try immediate autoplay (works on desktop), and fallback to first touch/move on mobile
   startSea();
-  ['pointerdown', 'touchstart', 'scroll'].forEach((evt) => {
+  ['pointerdown', 'touchstart'].forEach((evt) => {
     window.addEventListener(evt, startSea, { passive: true, once: true });
   });
 
@@ -302,37 +304,34 @@
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.type = 'triangle';
-      osc.frequency.setValueAtTime(620, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(140, ctx.currentTime + 0.06);
-      gain.gain.setValueAtTime(0.35, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.07);
+      osc.frequency.setValueAtTime(640, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(150, ctx.currentTime + 0.055);
+      gain.gain.setValueAtTime(0.4, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.065);
       osc.connect(gain);
       gain.connect(ctx.destination);
       osc.start();
-      osc.stop(ctx.currentTime + 0.075);
+      osc.stop(ctx.currentTime + 0.07);
     } catch (_) {}
   }
 
   function onEnvelopeTap() {
     if (envelopeOpened) return;
     envelopeOpened = true;
+    // Immediately stop sea sound
+    sea.pause();
+    sea.currentTime = 0;
     playClickSfx();
-    // Fade out sea waves smoothly
-    const fade = setInterval(() => {
-      if (sea.volume > 0.05) {
-        sea.volume = Math.max(0, sea.volume - 0.06);
-      } else {
-        sea.pause();
-        clearInterval(fade);
-      }
-    }, 60);
-    // Start the anniversary song immediately on user click
+    // Immediately start the anniversary song
     song.currentTime = 0;
     song.play().catch(() => {});
   }
 
-  const envEl = document.getElementById('envelope') || document.querySelector('.envelope-wrap, .envelope');
-  if (envEl) {
-    envEl.addEventListener('click', onEnvelopeTap);
-  }
+  // Attach to any envelope trigger via event delegation so it NEVER misses
+  document.addEventListener('click', (e) => {
+    if (envelopeOpened) return;
+    if (e.target && e.target.closest && e.target.closest('#envelope-btn, #envelope, #envelope-trigger, .envelope-stage, .envelope-wrap, .envelope, .wax-seal, .frame1-envelope')) {
+      onEnvelopeTap();
+    }
+  }, true);
 })();
