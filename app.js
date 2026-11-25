@@ -79,7 +79,7 @@
   $('f5-header').textContent = D.frame5.header;
   $('f5-footer').textContent = D.frame5.footer;
   renderMedia($('f5-media-a'), D.frame5.mediaA);
-  renderMedia($('f5-media-b'), D.frame5.mediaB);
+  if ($('f5-media-b')) renderMedia($('f5-media-b'), D.frame5.mediaB);
 
   // Frame 6 — Love Letter
   renderMedia($('f6-photo'), D.frame6.photo, true);
