@@ -1205,3 +1205,23 @@ body.locked { overflow: hidden; height: 100svh; }
   object-fit: contain !important;
   display: block !important;
 }
+
+
+/* Exact Frame 5 single cinema frame */
+#f5-media-b {
+  display: none !important;
+}
+#f5-media-a {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden !important;
+}
+#f5-media-a video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
