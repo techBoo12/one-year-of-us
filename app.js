@@ -7,7 +7,7 @@
   function renderMedia(el, media, light = false) {
     if (!el || !media) return;
     if (media.src) {
-      if (media.type === 'video') {
+      if (media.type === 'video' || /\.(mp4|mov|webm)(\?|$)/i.test(media.src || '')) {
         el.innerHTML = `<video src="${media.src}" autoplay muted loop playsinline></video>`;
       } else {
         el.innerHTML = `<img src="${media.src}" alt="${media.placeholderLabel || media.label || ''}" loading="lazy" />`;
@@ -55,14 +55,14 @@
       <div class="polaroid-photo-box"></div>
       <p class="polaroid-caption">${p.caption}</p>
     `;
-    renderMedia(card.querySelector('.polaroid-photo-box'), { src: p.src, label: p.label, placeholderSub: p.date }, true);
+    renderMedia(card.querySelector('.polaroid-photo-box'), { type: p.type, src: p.src, label: p.label, placeholderSub: p.date }, true);
     card.addEventListener('click', () => openLightbox(p));
     grid.appendChild(card);
   });
 
   const lb = $('lightbox');
   function openLightbox(p) {
-    renderMedia($('lightbox-media'), { src: p.src, label: p.label, placeholderSub: p.date }, true);
+    renderMedia($('lightbox-media'), { type: p.type, src: p.src, label: p.label, placeholderSub: p.date }, true);
     $('lightbox-caption').textContent = p.caption;
     $('lightbox-date').textContent = p.date || '';
     lb.classList.add('open');
