@@ -1009,3 +1009,15 @@ body.locked { overflow: hidden; height: 100svh; }
   bottom: auto !important;
   margin-top: 14px !important;
 }
+
+
+/* Tighten Frame 2 bottom gap so Frame 3 flows cleanly below Scroll down */
+#frame-2 {
+  min-height: auto !important;
+  padding-top: 40px !important;
+  padding-bottom: 24px !important;
+}
+#frame-3 {
+  min-height: auto !important;
+  padding-top: 24px !important;
+}
