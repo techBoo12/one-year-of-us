@@ -95,7 +95,7 @@ window.ANNIVERSARY_DATA = {
       "Thank you for choosing me every single day, for standing by me through every high and low, and for loving me in a way that feels like home. Here’s to every memory we’ve built and every chapter still waiting for us.",
     ],
     signOff: "Forever yours,",
-    signature: "Your Love ❤️",
+    signature: "Your Baby ❤️",
   },
 
   // FRAME 7 — Vintage Digicam Stack (Tap shutter to cycle!)
