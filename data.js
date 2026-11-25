@@ -74,11 +74,10 @@ window.ANNIVERSARY_DATA = {
 
   // FRAME 5 — "My Favorite Person" Filmstrip
   frame5: {
-    heading: "MY FAVORITE PERSON",
+    header: "MY FAVORITE PERSON",
     footer: "I LOVE YOU SO MUCH",
-    frames: [
-      { type: "video", src: "media/frame5.mp4", label: "FRAME 5 · MY FAVORITE PERSON", placeholderSub: "Cinema frame" }
-    ]
+    mediaA: { type: "video", src: "media/frame5.mp4", label: "MY FAVORITE PERSON", placeholderSub: "Cinema frame" },
+    mediaB: { type: "image", src: "", label: "", placeholderSub: "" }
   },
 
   // FRAME 6 — The Love Letter
