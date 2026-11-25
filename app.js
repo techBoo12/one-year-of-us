@@ -398,7 +398,7 @@
   pill.type = 'button';
   pill.textContent = '🔊 Tap for ocean sound';
   Object.assign(pill.style, {
-    position: 'absolute', top: '18px', left: '50%', transform: 'translateX(-50%)',
+    position: 'fixed', top: '18px', left: '50%', transform: 'translateX(-50%)',
     zIndex: '40', padding: '7px 14px', borderRadius: '999px',
     background: 'rgba(20, 6, 10, 0.58)', color: '#f6e2b3',
     border: '1px solid rgba(246, 226, 179, 0.35)', fontSize: '11px',
@@ -413,7 +413,6 @@
       pill.remove();
     }
   }, true);
-  f1.style.position = f1.style.position || 'relative';
   f1.appendChild(pill);
 })();
 
