@@ -27,9 +27,9 @@ window.ANNIVERSARY_DATA = {
   // FRAME 2 — Hero Reveal
   frame2: {
     titleLine1: "Happy Anniversary,",
-    titleLine2: "My Love!",
+    titleLine2: "My Queen!",
     dateBadge: "November 28, 2026",
-    scrollHint: "Scroll down for your surprise",
+    scrollHint: "Scroll down",
     heroMedia: {
       type: "image",
       src: "media/frame2.jpg",
