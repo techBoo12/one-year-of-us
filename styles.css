@@ -1070,3 +1070,30 @@ body.locked { overflow: hidden; height: 100svh; }
   object-position: center 20% !important;
   display: block !important;
 }
+
+
+/* Exact selector fix for Frame 3 (.framed-photo) so both photos fit cleanly side-by-side */
+.dual-photos {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 12px !important;
+}
+.framed-photo {
+  width: 100% !important;
+  min-width: 0 !important;
+  aspect-ratio: 4 / 5 !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+.framed-photo img,
+.framed-photo video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  display: block !important;
+}
