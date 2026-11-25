@@ -979,3 +979,33 @@ body.locked { overflow: hidden; height: 100svh; }
   margin-top: auto;
   padding-top: 12px;
 }
+
+
+/* Frame 2 — Pull title up closer to photo + clean Scroll down spacing */
+#frame-2 {
+  justify-content: flex-start;
+  padding-top: 44px;
+  padding-bottom: 36px;
+  gap: 20px;
+}
+#f2-bg {
+  position: relative !important;
+  inset: auto !important;
+  width: 100%;
+  height: auto !important;
+  padding-top: 0 !important;
+  z-index: 2;
+}
+#frame-2 .hero-content {
+  margin-top: 0 !important;
+  padding-top: 4px !important;
+  gap: 10px;
+}
+#frame-2 .hero-divider {
+  margin: 4px 0 8px !important;
+}
+#frame-2 .scroll-cue {
+  position: relative !important;
+  bottom: auto !important;
+  margin-top: 14px !important;
+}
