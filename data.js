@@ -84,7 +84,7 @@ window.ANNIVERSARY_DATA = {
   frame6: {
     photo: {
       type: "image",
-      src: "",
+      src: "media/frame6.jpg",
       placeholderLabel: "FRAME 6 · LETTER PHOTO #6",
       placeholderSub: "Sweet Polaroid snapshot",
     },
