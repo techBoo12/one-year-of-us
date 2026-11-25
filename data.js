@@ -32,7 +32,7 @@ window.ANNIVERSARY_DATA = {
     scrollHint: "Scroll down for your surprise",
     heroMedia: {
       type: "image",
-      src: "",
+      src: "media/frame2.jpg",
       placeholderLabel: "FRAME 2 · HERO PHOTO / CLIP #2",
       placeholderSub: "Full-bleed favorite couple shot",
     },
