@@ -88,7 +88,9 @@
   $('f6-signoff-label').textContent = D.frame6.signOff;
   $('f6-signature').textContent = D.frame6.signature;
 
-  // Frame 7 — Interactive Digicams
+  // Frame 7 — replaced by 3x3 collage below
+  if ($('cam-screen-a')) {
+// Frame 7 — Interactive Digicams
   $('f7-hint').textContent = D.frame7.hint;
   const camIdx = { cameraA: 0, cameraB: 0 };
   function renderCam(key) {
@@ -116,6 +118,8 @@
       }, 140);
     });
   });
+
+    }
 
   // Frame 8 — replaced by iMessage chat deck below
   if ($('f8-heading')) {
@@ -451,4 +455,19 @@
     }
     io.observe(v);
   });
+})();
+
+
+/* Frame 7: 3x3 collage staggered fade-in on scroll */
+(function initF7Collage() {
+  const grid = document.getElementById('f7-collage-grid');
+  if (!grid) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        grid.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.2 });
+  io.observe(grid);
 })();
