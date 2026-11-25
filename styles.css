@@ -1112,3 +1112,25 @@ body.locked { overflow: hidden; height: 100svh; }
   aspect-ratio: 5 / 4 !important;
   transform: rotate(-1.5deg);
 }
+
+
+/* Lock all Polaroid photos & videos cleanly inside their square frames */
+.polaroid-photo,
+.polaroid-media {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+}
+.polaroid-photo img,
+.polaroid-photo video,
+.polaroid-media img,
+.polaroid-media video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  display: block !important;
+}
