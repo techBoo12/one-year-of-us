@@ -169,8 +169,6 @@
 
   // Frame 9 — Closing Banner & Floating Hearts
   renderMedia($('f9-bg'), D.frame9.closingMedia);
-  $('f9-t1').textContent = D.frame9.titleLine1;
-  $('f9-t2').textContent = D.frame9.titleLine2;
   $('f9-date').textContent = D.meta.dateShort;
 
   const heartsWrap = $('floating-hearts');
